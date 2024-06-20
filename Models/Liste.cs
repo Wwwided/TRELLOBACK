@@ -14,7 +14,7 @@ namespace TRELLOBACK.Models
 
 		[Required]
 		public int ProjetId { get; set; }
-		public Projet Projet { get; set; }
+		public Projet? Projet { get; set; }
 			
 	}
 }

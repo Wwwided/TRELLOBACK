@@ -134,3 +134,4 @@ C:\Users\ib\Desktop\TRELLOTEST\TRELLOBACK\obj\Debug\net8.0\refint\TRELLOBACK.dll
 C:\Users\ib\Desktop\TRELLOTEST\TRELLOBACK\obj\Debug\net8.0\TRELLOBACK.pdb
 C:\Users\ib\Desktop\TRELLOTEST\TRELLOBACK\obj\Debug\net8.0\TRELLOBACK.genruntimeconfig.cache
 C:\Users\ib\Desktop\TRELLOTEST\TRELLOBACK\obj\Debug\net8.0\ref\TRELLOBACK.dll
+C:\Users\ib\Desktop\TRELLOTEST\TRELLOBACK\obj\Debug\net8.0\TRELLOBACK.sourcelink.json

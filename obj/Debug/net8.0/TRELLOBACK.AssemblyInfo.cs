@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TRELLOBACK")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49fb6878c580687d4f3f41d2affac358b1c6c03e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TRELLOBACK")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TRELLOBACK")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

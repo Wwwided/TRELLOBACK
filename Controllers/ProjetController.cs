@@ -20,7 +20,7 @@ namespace TRELLOBACK.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Projet>>> GetProjets()
         {
-            var ok = await _context.Projets.ToListAsync();
+            var ok = await _context.Projets.Include(p => p.Listes).ToListAsync();
             return ok;
         }
 
@@ -28,7 +28,7 @@ namespace TRELLOBACK.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Projet>> GetProjet(int id)
         {
-            var projet = await _context.Projets.FindAsync(id);
+            var projet = await _context.Projets.Include(p => p.Listes).FirstOrDefaultAsync(p => p.Id == id);
 
             if (projet == null)
             {

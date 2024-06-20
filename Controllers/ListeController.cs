@@ -20,7 +20,7 @@ namespace TRELLOBACK.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Liste>>> GetListes()
         {
-            return await _context.Listes.ToListAsync();
+            return await _context.Listes.Include(l => l.Projet).ToListAsync();
         }
 
         // GET: api/Liste/5
@@ -46,6 +46,8 @@ namespace TRELLOBACK.Controllers
             }
             // Charger le projet avec les listes associées
             var projet = await _context.Projets.Include(p => p.Listes).FirstOrDefaultAsync(p => p.Id == liste.ProjetId);
+
+            System.Console.WriteLine(projet);
 
             if (projet == null)
             {

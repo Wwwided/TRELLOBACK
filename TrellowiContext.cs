@@ -27,6 +27,5 @@ namespace TRELLOBACK.Context{
             .WithOne(l => l.Projet)
             .HasForeignKey(l => l.ProjetId);
             }
-
     }
 }
