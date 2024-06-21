@@ -17,6 +17,7 @@ namespace TRELLOBACK.Models
 		public int Id { get; set; }
 		public string TitreProjet { get; set; }
 		public virtual ICollection<ListeDTO> Listes { get; set;} = new List<ListeDTO>();
+		public DateTime CreatedAt { get; set; }
 	}
 
 
