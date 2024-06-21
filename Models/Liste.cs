@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TRELLOBACK.Models
 {
-	public partial class Liste
+	public class Liste
 	{
 		[Key]
 		public int Id { get; set; }
@@ -15,6 +15,15 @@ namespace TRELLOBACK.Models
 		[Required]
 		public int ProjetId { get; set; }
 		public Projet? Projet { get; set; }
+
+		public ListeDTO ToListeDTO(){
+			return new ListeDTO
+			{
+				Id = Id,
+				TitreListe = TitreListe,
+				ProjetId = ProjetId
+			};
+		}
 			
 	}
 }

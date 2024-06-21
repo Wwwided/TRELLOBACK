@@ -9,7 +9,9 @@ namespace TRELLOBACK.Context{
     {
     }
     public virtual DbSet<Projet> Projets { get; set; }
+    public virtual DbSet<ProjetDTO> ProjetsDTO { get; set; }
     public virtual DbSet<Liste> Listes { get; set; }
+    public virtual DbSet<ListeDTO> ListesDTO { get; set; }
     public virtual DbSet<Carte> Cartes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

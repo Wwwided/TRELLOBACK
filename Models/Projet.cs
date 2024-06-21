@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TRELLOBACK.Models
 {
-	public partial class Projet
+	public class Projet
 	{
 		[Key]
 		public int Id { get; set; }
@@ -14,6 +14,17 @@ namespace TRELLOBACK.Models
         public Projet()
 		{
 			CreatedAt = DateTime.Now;
+		}
+
+		public ProjetDTOListesDTO ToProjetDTO()
+		{
+			return new ProjetDTOListesDTO
+			{
+				Id =Id,
+				TitreProjet = TitreProjet,
+				Listes = this.Listes.Select(L => L.ToListeDTO()).ToList()
+
+			};
 		}
 	}
 }

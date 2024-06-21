@@ -1,11 +1,12 @@
 using TRELLOBACK.Context;
+using TRELLOBACK.DAO;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddDbContext<TrellowiContext>();
-builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ProjetDAO>();
 builder.Services.AddControllersWithViews().AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.ReferenceHandler = System

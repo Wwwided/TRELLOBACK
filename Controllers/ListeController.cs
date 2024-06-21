@@ -18,23 +18,39 @@ namespace TRELLOBACK.Controllers
 
         // GET: api/Liste
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Liste>>> GetListes()
+        public async Task<ActionResult<IEnumerable<ListeDTO>>> GetListes()
         {
-            return await _context.Listes.Include(l => l.Projet).ToListAsync();
+            var listes = await _context.Listes
+                               .Select(l => new ListeDTO
+                               {
+                                   Id = l.Id,
+                                   TitreListe = l.TitreListe,
+                                   ProjetId = l.ProjetId
+                               })
+                               .ToListAsync();
+
+        return Ok(listes);
         }
 
         // GET: api/Liste/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Liste>> GetListe(int id)
         {
-            var liste = await _context.Listes.FindAsync(id);
+            var liste = await _context.Listes.Where(l => l.Id == id)
+                              .Select(l => new ListeDTO
+                              {
+                                  Id = l.Id,
+                                  TitreListe = l.TitreListe,
+                                  ProjetId = l.ProjetId
+                              })
+                              .FirstOrDefaultAsync();
 
             if (liste == null)
             {
                 return NotFound();
             }
 
-            return liste;
+            return Ok(liste);
         }
 
         [HttpPost]
